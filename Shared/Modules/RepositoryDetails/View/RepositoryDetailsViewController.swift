@@ -43,5 +43,5 @@ final class RepositoryDetailsViewController: UIViewController {
 }
 
 extension RepositoryDetailsViewController: RepositoryDetailsViewProtocol {
-    
+    //Viper module protocol implemantation
 }

@@ -8,15 +8,13 @@
 import Foundation
 import UIKit
 
-final class RepositoryDetailsRouter: RepositoryDetailsRouterProtocol, Storyboarded {
-    
-    static let storyboardName = "RepositoryDetailsViewController"
-    
+final class RepositoryDetailsRouter: RepositoryDetailsRouterProtocol {
+        
     weak var viewController: UIViewController!
     
     static func assembleModule(repository: Repository) -> RepositoryDetailsViewController {
         
-        let view: RepositoryDetailsViewController = storyboard.instantiateViewController()
+        let view: RepositoryDetailsViewController = RepositoryDetailsViewController.instantiate()
         let presenter = RepositoryDetailsPresenter(repository: repository)
         let router = RepositoryDetailsRouter()
         

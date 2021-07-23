@@ -8,15 +8,13 @@
 import Foundation
 import UIKit
 
-final class RepositoriesRouter: RepositoriesRouterProtocol, Storyboarded {
-    
-    static let storyboardName = "RepositoriesViewController"
-    
+final class RepositoriesRouter: RepositoriesRouterProtocol {
+        
     weak var viewController: UIViewController!
     
     static func assembleModule() -> RepositoriesViewController {
         
-        let view: RepositoriesViewController = storyboard.instantiateViewController()
+        let view: RepositoriesViewController = RepositoriesViewController.instantiate()
         let presenter = RepositoriesPresenter()
         let router = RepositoriesRouter()
         let interactor = RepositoriesInteractor()

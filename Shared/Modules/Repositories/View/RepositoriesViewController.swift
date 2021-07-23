@@ -27,10 +27,13 @@ final class RepositoriesViewController: UIViewController {
     }
     
     private func applyStyle() {
+        self.title = "Repositories"
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
 
 }
+
+//MARK: - RepositoriesViewProtocol
 
 extension RepositoriesViewController: RepositoriesViewProtocol {
     
@@ -53,6 +56,8 @@ extension RepositoriesViewController: RepositoriesViewProtocol {
     }
     
 }
+
+//MARK: - TableView
 
 extension RepositoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
