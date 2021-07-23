@@ -16,8 +16,8 @@ final class RepositoryDetailsViewController: UIViewController {
     @IBOutlet weak var labelAuthor: UILabel!
     @IBOutlet weak var labelStarsCount: UILabel!
     @IBOutlet weak var imageViewAvatar: UIImageView!
-    
-    var selectedRepository: Repository?
+        
+    var presenter: RepositoryDetailsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +26,8 @@ final class RepositoryDetailsViewController: UIViewController {
     }
     
     func setup() {
-        guard let repository = selectedRepository else { return }
-        print(repository.name)
+        let repository = presenter.getRepository()
+
         labelTitle.text = repository.name
         labelDescription.text = repository.description
         labelAuthor.text = repository.owner.login
@@ -39,5 +39,9 @@ final class RepositoryDetailsViewController: UIViewController {
         self.title = "Detalhes"
         imageViewAvatar.layer.cornerRadius = imageViewAvatar.frame.size.height/2
     }
+    
+}
+
+extension RepositoryDetailsViewController: RepositoryDetailsViewProtocol {
     
 }
